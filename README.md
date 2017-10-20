@@ -79,6 +79,8 @@ Slowest growing | - | - | - | - | Fastest growing
 
 *Note: if a run time is the same by big-O and big-omega, then it is also big-Theta*
 
+**Recursion** - an algorithm designed to solve a problem by solving a smaller instance of the same problem, unless the problem is so small that it can be solved directly.
+
 ---
 ## Binary Search
 
@@ -116,5 +118,15 @@ Runtime:
 - Best case: Θ(n).
 - Average case for a random array: Θ(n^2).
 - "Almost sorted" case: Θ(n).
+
+---
+
+## Factorial Function
+
+**Factorial** - the product of the integers 1 through *n*.
+
+Write a factorial function.
+
+![Solution](/src/factorial.js)
 
 ---
