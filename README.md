@@ -105,3 +105,16 @@ Write a program that takes an array of integers and step-by-step swaps each inte
 Write a function that takes three parameters - an array, an index, and a value - and inserts the value at the index into the array.
 
 ![Solution](/src/insertionSort.js)
+
+Write a program that utilizes the above function to loop over an array, and insert each new item into the subarray before the new item.
+
+![Solution](/src/insertionSortTwo.js)
+
+*Runtime:
+
+- Worst case: Θ(n^2).
+- Best case: Θ(n).
+- Average case for a random array: Θ(n^2).
+- "Almost sorted" case: Θ(n).*
+
+---
