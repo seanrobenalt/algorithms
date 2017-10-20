@@ -110,11 +110,11 @@ Write a program that utilizes the above function to loop over an array, and inse
 
 ![Solution](/src/insertionSortTwo.js)
 
-*Runtime:
+Runtime:
 
 - Worst case: Θ(n^2).
 - Best case: Θ(n).
 - Average case for a random array: Θ(n^2).
-- "Almost sorted" case: Θ(n).*
+- "Almost sorted" case: Θ(n).
 
 ---
