@@ -97,5 +97,11 @@ Write a program that takes an array of integers and step-by-step swaps each inte
 
 ![result](/img/sortResult.png)
 
+
 Runtime: Θ(n^2) for the calls to `indexOfMinimum`, Θ(n) for the calls to `swap`, and Θ(n) for the loop in `selectionSort`. Increasing the input size will increase the runtime exponentially.
 ---
+## Insertion Sort
+
+Write a function that takes three parameters - an array, an index, and a value - and inserts the value at the index into the array.
+
+![Solution](/src/insertionSort.js)
