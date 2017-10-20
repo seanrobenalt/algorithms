@@ -73,6 +73,12 @@ Slowest growing | - | - | - | - | Fastest growing
 --- | --- | --- | --- | --- | ---
 1 | *n* | *n*^2 | *n*^3 | (3/2)^*n* | 2^*n*
 
+**Big-O notation** - running time grows at most this much, but could grow more slowly. Used for asymptotic upper bounds - bounds growth of the running time from above only.
+
+**Big-omega notation** - use when we want to say that an algorithm takes at least a certain amount of time, without providing an upper bound. Used for asymptotic lower bounds - bounds growth of the running time from below only.
+
+*Note: if a run time is the same by big-O and big-omega, then it is also big-Theta*
+
 ---
 ## Binary Search
 
@@ -90,4 +96,6 @@ Write a program that takes an array of integers and step-by-step swaps each inte
 ![Solution](/src/selectionSort.js)
 
 ![result](/img/sortResult.png)
+
+Runtime: Θ(n^2) for the calls to `indexOfMinimum`, Θ(n) for the calls to `swap`, and Θ(n) for the loop in `selectionSort`. Increasing the input size will increase the runtime exponentially.
 ---
