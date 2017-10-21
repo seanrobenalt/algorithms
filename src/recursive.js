@@ -5,11 +5,6 @@ var factorial = function(n) {
 	} else {
 	    return n*factorial(n-1);
 	}
-	var result = 1;
-    for(var i = 1; i < n; i++) {
-        result *= (i+1);
-    }
-    return result;
 };
 
 println("The value of 0! is " + factorial(0) + ".");
