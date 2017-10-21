@@ -143,4 +143,11 @@ Write a recursive function that takes two arguments and computes the value of th
 
 ![Solution](/src/powers.js)
 
+Write a recursive function that solves the Towers of Hanoi. The idea is that there are *n* number of disks on a peg. There are three pegs total. You must move *n* number of disks from a certain peg to a target peg. The disks are organized from largest on the bottom to the smallest on the top. The trick is that you can't have a smaller disk underneath a larger disk. So you have to find the spare peg, move *n - 1* disks to the spare peg, then move the large disk to the target peg, and finally move the *n - 1* disks to the target peg, while the order of disks remains largest on the bottom to smallest on the top.
+Here's a visualization:
+
+![Hanoi](/img/hanoi.png)
+
+![Solution](/src/hanoi.js)
+
 ---
