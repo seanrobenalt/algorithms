@@ -125,8 +125,22 @@ Runtime:
 
 **Factorial** - the product of the integers 1 through *n*.
 
-Write a factorial function.
+Write an iterative factorial function.
 
 ![Solution](/src/factorial.js)
+
+Write a recursive factorial function.
+
+**Rescursive** - a function that calls itself inside of the function. Recursive aka referring to itself.
+
+![Solution](/src/recursive.js)
+
+Use recursion to determine whether a word is a palindrome.
+
+![Solution](/src/palindrome.js)
+
+Write a recursive function that takes two arguments and computes the value of the first argument raised to the power of the second argument.
+
+![Solution](/src/powers.js)
 
 ---
