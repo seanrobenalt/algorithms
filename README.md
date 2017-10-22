@@ -151,3 +151,5 @@ Here's a visualization:
 ![Solution](/src/hanoi.js)
 
 ---
+
+## Merge and Quicksort Algorithms
