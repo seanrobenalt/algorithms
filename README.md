@@ -1,6 +1,8 @@
 *Notes from Khan Academy's <a href="https://www.khanacademy.org/computing/computer-science/algorithms">course
 </a>on algorithims.*
 
+# Key Terms
+
 **Algorithm** - A set of steps for a computer program to accomplish a task.
 
 - Used to solve a problem and do so efficiently.
@@ -81,7 +83,13 @@ Slowest growing | - | - | - | - | Fastest growing
 
 **Recursion** - an algorithm designed to solve a problem by solving a smaller instance of the same problem, unless the problem is so small that it can be solved directly.
 
+**Tree** - A graph with no cycles (paths that start and end at the same place).
+
+**Node** - The vertices in a tree, root node is the top node and all other nodes are child nodes.
+
 ---
+# Code Challenges
+
 ## Binary Search
 
 Write a program that takes an array and a target value, and searches the array for the target value.
@@ -108,6 +116,8 @@ Write a function that takes three parameters - an array, an index, and a value -
 
 ![Solution](/src/insertionSort.js)
 
+---
+
 Write a program that utilizes the above function to loop over an array, and insert each new item into the subarray before the new item.
 
 ![Solution](/src/insertionSortTwo.js)
@@ -129,19 +139,27 @@ Write an iterative factorial function.
 
 ![Solution](/src/factorial.js)
 
+---
+
 Write a recursive factorial function.
 
 **Rescursive** - a function that calls itself inside of the function. Recursive aka referring to itself.
 
 ![Solution](/src/recursive.js)
 
+---
+
 Use recursion to determine whether a word is a palindrome.
 
 ![Solution](/src/palindrome.js)
 
+---
+
 Write a recursive function that takes two arguments and computes the value of the first argument raised to the power of the second argument.
 
 ![Solution](/src/powers.js)
+
+---
 
 Write a recursive function that solves the Towers of Hanoi. The idea is that there are *n* number of disks on a peg. There are three pegs total. You must move *n* number of disks from a certain peg to a target peg. The disks are organized from largest on the bottom to the smallest on the top. The trick is that you can't have a smaller disk underneath a larger disk. So you have to find the spare peg, move *n - 1* disks to the spare peg, then move the large disk to the target peg, and finally move the *n - 1* disks to the target peg, while the order of disks remains largest on the bottom to smallest on the top.
 Here's a visualization:
@@ -162,6 +180,18 @@ Employ a divide and conquer style of solving the problem:
 
 3. **Combine** the solutions to the subproblems into the solution for the original problem.
 
+---
+
 Write a function that uses merge sort and takes three arguments, an array, an index to start at and an index to end at. Elements in the array should be sorted in ascending order after getting passed to the function.
 
+#### Runtime
+
+1. **Divide** - This step takes Θ(1) time or constant time because all it does is find midpoint of array.
+2. **Conquer** - This step takes *n*/2 time and with each time you make a recursive call, the runtime increases by 2, thus taking 2(*n*/2).
+3. **Combine** - This step takes Θ(*n*) time as it merges a total of *n* elements.
+
+Total runtime after discarding low-order terms and constants: Θ(*n* lg *n*).
+
 ![Solution](/src/merge.js)
+
+---

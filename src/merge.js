@@ -1,36 +1,48 @@
 var merge = function(array, p, q, r) {
-    var a = [],
-        b = [],
-        c = p,
-        d, e;
-    for (d = 0; c <= q; d++, c++) {
-        a[d] = array[c];
+    var lowHalf = [];
+    var highHalf = [];
+
+    var k = p;
+    var i;
+    var j;
+    for (i = 0; k <= q; i++, k++) {
+        lowHalf[i] = array[k];
     }
-    for (e = 0; c <= r; e++, c++) {
-        b[e] = array[c];
+    for (j = 0; k <= r; j++, k++) {
+        highHalf[j] = array[k];
     }
-    c = p;
-    for (e = d = 0; d < a.length && e < b.length;) {
-        if (a[d] < b[e]) {
-            array[c] = a[d];
-            d++;
+
+    k = p;
+    i = 0;
+    j = 0;
+
+    while(i < lowHalf.length && j < highHalf.length) {
+        if(lowHalf[i] < highHalf[j]) {
+            array[k] = lowHalf[i];
+            i++;
         } else {
-            array[c] = b[e];
-            e++;
+        array[k] = highHalf[j];
+        j++;
         }
-        c++;
+        k++;
     }
-    for (; d < a.length;) {
-        array[c] = a[d];
-        d++;
-        c++;
+    while(j < i) {
+        array[k] = highHalf[j];
+        j++;
+        k++;
     }
-    for (; e < b.length;) {
-        array[c] = b[e];
-        e++;
-        c++;
+    while(i < j) {
+        array[k] = lowHalf[i];
+        i++;
+        k++;
     }
 };
+
+
+var array = [3, 7, 12, 14, 2, 6, 9, 11];
+merge(array, 0, Math.floor((0 + array.length-1) / 2), array.length-1);
+println("Array after merging: " + array);
+Program.assertEqual(array, [2, 3, 6, 7, 9, 11, 12, 14]);
 
 // Takes in an array and recursively merge sorts it
 var mergeSort = function(array, p, r) {
