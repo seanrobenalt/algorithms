@@ -172,6 +172,8 @@ Here's a visualization:
 
 ## Merge and Quicksort Algorithms
 
+### Merge
+
 Employ a divide and conquer style of solving the problem:
 
 1. **Divide** the problem into a number of subproblems that are smaller instances of the same problem.
@@ -179,8 +181,6 @@ Employ a divide and conquer style of solving the problem:
 2. **Conquer** the subproblems by solving them recursively. If they are small enough, solve the subproblems as base cases.
 
 3. **Combine** the solutions to the subproblems into the solution for the original problem.
-
----
 
 Write a function that uses merge sort and takes three arguments, an array, an index to start at and an index to end at. Elements in the array should be sorted in ascending order after getting passed to the function.
 
@@ -195,3 +195,13 @@ Total runtime after discarding low-order terms and constants: Θ(*n* lg *n*).
 ![Solution](/src/merge.js)
 
 ---
+
+### Quicksort
+
+Also employs a divide and conquer style of solving a problem. Quicksort works in place, while merge sort makes a copy. In quicksort, all the work is done in the divide step. Quicksort outperforms merge sort, although its worst case runtime is as bad as selection and insertion sort.
+
+1. **Divide** - select any element in an array and call it the **pivot**. Rearrange the elements in the array so that all elements <= **pivot** are to the left of the **pivot**. This is called **partitioning**. It doesn't matter if the elements to the left or right are sorted relative to each other, the point of this step is just to get all elements on their respective sides of the **pivot**.
+
+2. **Conquer** - recursively sort the elements on the left and right side of **pivot**.
+
+3. **Combine** - No need for this step, as all the elements will be sorted after the second step.
