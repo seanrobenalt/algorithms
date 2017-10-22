@@ -153,3 +153,11 @@ Here's a visualization:
 ---
 
 ## Merge and Quicksort Algorithms
+
+Employ a divide and conquer style of solving the problem:
+
+1. **Divide** the problem into a number of subproblems that are smaller instances of the same problem.
+
+2. **Conquer** the subproblems by solving them recursively. If they are small enough, solve the subproblems as base cases.
+
+3. **Combine** the solutions to the subproblems into the solution for the original problem.
