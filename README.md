@@ -161,3 +161,7 @@ Employ a divide and conquer style of solving the problem:
 2. **Conquer** the subproblems by solving them recursively. If they are small enough, solve the subproblems as base cases.
 
 3. **Combine** the solutions to the subproblems into the solution for the original problem.
+
+Write a function that uses merge sort and takes three arguments, an array, an index to start at and an index to end at. Elements in the array should be sorted in ascending order after getting passed to the function.
+
+![Solution](/src/merge.js)
