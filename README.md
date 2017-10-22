@@ -205,3 +205,9 @@ Also employs a divide and conquer style of solving a problem. Quicksort works in
 2. **Conquer** - recursively sort the elements on the left and right side of **pivot**.
 
 3. **Combine** - No need for this step, as all the elements will be sorted after the second step.
+
+Write a program that uses quicksort to sort an array in ascending order.
+
+![Solution](/src/quickSort.js)
+
+---
