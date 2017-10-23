@@ -211,3 +211,71 @@ Write a program that uses quicksort to sort an array in ascending order.
 ![Solution](/src/quickSort.js)
 
 ---
+
+### Graphs
+
+A **graph** consists of vertices and lines. **Vertices** are the points or data of the graph. Lines in a graph are called **edges**. One vertex can be connected to another vertex via an edge. Denote an edge connecting vertices *u* and *v* by the pair (*u*, *v*). In an **undirected** graph, connections go both ways so you can denote the pair as (*v*, *u*) as well.
+
+Vertices connected by an edge are **adjacent** or **neighbors**. A **path** is the route that a vertex is connected to another vertex. If you're trying to connect to a vertex that is further removed than the immediate neighbor, you say that there is a **path** of *n* edges between the vertices. When a path goes from a particular vertex back to itself, it is called a **cycle**.
+
+A **weighted graph** is a graph whose edges have numeric values or **weight**.
+
+A **directed graph** is one with edges that do not go both ways. A **directed acyclic graph** has no cycles. When denoting connections in this type of graph, order matters. We say that an edge leaves one vertex and enters another. Thus, (*u*, *v*) denotes that the *u* edge is where the connection is coming from and the *v* edge is where the connection ends.
+
+An **edge list** is a way to represent a graph in an array:
+
+```javascript
+var edgeList = [ [0,1], [0,6], [0,8], [1,4], [1,6], [1,9], [2,4], [2,6], [3,4],     [3,5],[3,8], [4,5] ];
+```
+
+If we want to find whether a particular graph contains a particular edge, we have to search through `edgeList`.
+
+Below is an **adjacency matrix**:
+
+```javascript
+[ [0, 1, 0, 0, 0, 0, 1, 0, 1, 0],
+  [1, 0, 0, 0, 1, 0, 1, 0, 0, 1],
+  [0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+  [0, 0, 0, 0, 1, 1, 0, 0, 1, 0],
+  [0, 1, 1, 1, 0, 1, 0, 0, 0, 1],
+  [0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+  [1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+  [1, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+  [0, 1, 0, 0, 1, 0, 0, 1, 0, 0] ]
+```
+
+This is a *V* x *V* matrix of 0s and 1s. If you want to locate an edge, put in the row *i*, column *j* entry. Query this by saying **graph[i][j]**, which takes constant time. An adjacency matrix takes up more space than an edge list.
+
+**adjacency lists** - combo of edge list and adjacency matrix. For each vertex *i*, store an array of the vertices adjacent to it.
+
+```javascript
+[ [1, 6, 8],
+  [0, 4, 6, 9],
+  [4, 6],
+  [4, 5, 8],
+  [1, 2, 3, 5, 9],
+  [3, 4],
+  [0, 1, 2],
+  [8, 9],
+  [0, 3, 7],
+  [1, 4, 7] ]
+```
+
+Space required:
+**edge list** - Θ(*E*) where *E* is number of edges.
+**adjacency matrix** - Θ(*V*^2) where *V* is number of vertices.
+**adjacency list** - Θ(*V* + *E*)
+
+Runtime for searching:
+**edge list** - O(*E*)
+**adjacency matrix** - O(1)
+**adjacency list** - O(*d*) where *d* is the degree of each vertex.
+
+---
+
+Store the graph in an edge list, adjacency matrix and adjacency list.
+
+![Solution](/src/graphs.js)
+
+---
