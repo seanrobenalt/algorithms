@@ -279,3 +279,17 @@ Store the graph in an edge list, adjacency matrix and adjacency list.
 ![Solution](/src/graphs.js)
 
 ---
+
+### Breadth-first Search (BFS)
+
+Finds shortest paths from a given **source vertex** to all other vertices, in terms of the number of edges in the paths.
+
+This type of search assigns two values to each vertex *v*. A **distance**, giving the minimum number of edges in any path from the source vertex to vertex *v*. And the **predecessor** vertex of *v* that will lead to the shortest path to the source vertex.
+
+Write a program that performs breadth-first search on a graph and returns an array of objects describing each vortex.
+
+*Runtime: breadth-first search spends O(V + E) time visiting vertices.*
+
+![Solution](/src/bfs.js)
+
+---
