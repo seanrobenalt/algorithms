@@ -293,3 +293,9 @@ Write a program that performs breadth-first search on a graph and returns an arr
 ![Solution](/src/bfs.js)
 
 ---
+
+## Not part of Khan course
+
+Write the Math.round, Math.ceil and Math.floor functions and make them work as the JS Engine already does.
+
+![Solution](/src/math.js)
