@@ -299,3 +299,40 @@ Write a program that performs breadth-first search on a graph and returns an arr
 Write the Math.round, Math.ceil and Math.floor functions and make them work as the JS Engine already does.
 
 ![Solution](/src/math.js)
+
+---
+
+Suppose we could access yesterday's stock prices as an array, where:
+
+The indices are the time in minutes past trade opening time, which was 9:30am local time.
+The values are the price in dollars of Apple stock at that time.
+So if the stock cost $500 at 10:30am, stockPricesYesterday[60] = 500.
+
+Write an efficient function that takes stockPricesYesterday and returns the best profit I could have made from 1 purchase and 1 sale of 1 Apple stock yesterday.
+
+For example:
+
+    var stockPricesYesterday = [10, 7, 5, 8, 11, 9];
+
+    getMaxProfit(stockPricesYesterday);
+    // returns 6 (buying for $5 and selling for $11)
+
+![Solution](/src/getMaxProfit.js)
+
+- one pass through finds answer
+
+O(*n*) time and O(1) space.
+
+---
+
+Write a function getProductsOfAllIntsExceptAtIndex() that takes an array of integers and returns an array of the products.
+
+![Solution](/src/getProducts.js)
+
+- we take two passes through our input array and the array we build always has the same length as the input array
+
+O(*n*) time and O(1) space.
+
+**Good strategy: Start with a brute force solution, look for repeat work in that solution, and modify it to only do that work once.**
+
+---
