@@ -12,31 +12,37 @@ meaning:
 
 - any function requiring just one step will run in "constant time" or *O(1)*
 
-    function printFirstItem(arrayOfItems) {
-        console.log(arrayOfItems[0]);
-    }
+```javascript
+function printFirstItem(arrayOfItems) {
+    console.log(arrayOfItems[0]);
+}
+```
 
 - no matter how big the input is here, it always only takes that one step to find the first item in the array.
 
 ---
 
-    function printAllItems(arrayOfItems) {
-        arrayOfItems.forEach(function(item) {
-            console.log(item);
-        });
-    }
+```javascript
+function printAllItems(arrayOfItems) {
+    arrayOfItems.forEach(function(item) {
+        console.log(item);
+    });
+}
+```
 
 - this function runs in *O(n)* time where *n* is the number of items in the array. If the array has 6 items we have to print 6 times, if it has 6 million items we have to print 6 million times.
 
 ---
 
-    function printAllPossibleOrderedPairs(arrayOfItems) {
-      arrayOfItems.forEach(function(firstItem) {
-          arrayOfItems.forEach(function(secondItem) {
-              console.log(firstItem, secondItem);
-          });
+```javascript
+function printAllPossibleOrderedPairs(arrayOfItems) {
+    arrayOfItems.forEach(function(firstItem) {
+      arrayOfItems.forEach(function(secondItem) {
+          console.log(firstItem, secondItem);
       });
-    }
+    });
+}
+```
 
 - this function runs in "quadratic time" or *O(n^2)*. Each loop runs in *O(n)* time where *n* is the number of items in the array. Since we have to do two loops here, we have to print *n* times twice, which *n* * *n* or *n^2*. If the array has 10 items, then we are printing 100 times.
 
@@ -46,52 +52,58 @@ meaning:
 
 ex. both of these functions have *O(n)* runtime, but have different input types.
 
-    function sayHiNTimes(n) {
-        for (var i = 0; i < n; i++) {
-            console.log('hi');
-        }
+```javascript
+function sayHiNTimes(n) {
+    for (var i = 0; i < n; i++) {
+        console.log('hi');
     }
+}
 
-    function printAllItemsInArray(theArray) {
-        theArray.forEach(function(item) {
-            console.log(item);
-        });
-    }
+function printAllItemsInArray(theArray) {
+    theArray.forEach(function(item) {
+        console.log(item);
+    });
+}
+```
 
 ---
 
 - in Big O, we always drop constants, ie.
 
-    function printAllItemsTwice(theArray) {
-        theArray.forEach(function(item) {
-            console.log(item);
-        });
+```javascript
+function printAllItemsTwice(theArray) {
+    theArray.forEach(function(item) {
+        console.log(item);
+    });
 
-        // once more, with feeling
-        theArray.forEach(function(item) {
-            console.log(item);
-        });
-    }
+// once more, with feeling
+    theArray.forEach(function(item) {
+        console.log(item);
+    });
+}
+```
 
 - this function runs in *O(2n)* but we drop the constants so it is just *O(n)*.
 
 ex.
 
-    function printFirstItemThenFirstHalfThenSayHi100Times(theArray) {
-        console.log(theArray[0]);
+```javascript
+function printFirstItemThenFirstHalfThenSayHi100Times(theArray) {
+    console.log(theArray[0]);
 
-        var middleIndex = Math.floor(theArray.length / 2);
-        var index = 0;
+    var middleIndex = Math.floor(theArray.length / 2);
+    var index = 0;
 
-        while (index < middleIndex) {
-            console.log(theArray[index]);
-            index++;
-        }
-
-        for (var i = 0; i < 100; i++) {
-            console.log('hi');
-        }
+    while (index < middleIndex) {
+        console.log(theArray[index]);
+        index++;
     }
+
+    for (var i = 0; i < 100; i++) {
+        console.log('hi');
+    }
+}
+```
 
 - this function runs in *O(1 + n/2 + 100)* which we call *O(n)*. Why? For Big O, we are looking at what happens **as n gets arbitrarily large**. As *n* gets really big, adding 100 or dividing by 2 has a decreasingly significant effect.
 
@@ -101,20 +113,22 @@ ex.
 
 ex.
 
-    function printAllNumbersThenAllPairSums(arrayOfNumbers) {
+```javascript
+function printAllNumbersThenAllPairSums(arrayOfNumbers) {
 
-        console.log('these are the numbers:');
-        arrayOfNumbers.forEach(function(number) {
-            console.log(number);
-        });
+    console.log('these are the numbers:');
+    arrayOfNumbers.forEach(function(number) {
+        console.log(number);
+    });
 
-        console.log('and these are their sums:');
-        arrayOfNumbers.forEach(function(firstNumber) {
-            arrayOfNumbers.forEach(function(secondNumber) {
-                console.log(firstNumber + secondNumber);
-            });
+    console.log('and these are their sums:');
+    arrayOfNumbers.forEach(function(firstNumber) {
+        arrayOfNumbers.forEach(function(secondNumber) {
+            console.log(firstNumber + secondNumber);
         });
-    }
+    });
+}
+```
 
 - here our runtime is *O(n + n^2)*, which we just call *O(n^2)*. Even if it was *O(n^2/2 + 100n)* it would still be called *O(n^2)*.
 
@@ -129,15 +143,17 @@ ex.
 
 - in Big O, we are usually talking about the worst case, but sometimes, the worst case is significantly worse than the best case:
 
-    function contains(haystack, needle) {
+```javascript
+function contains(haystack, needle) {
 
-      // does the haystack contain the needle?
-      for (var i = 0; i < haystack.length; i++) {
-          if (haystack[i] === needle) return true;
-      }
+  // does the haystack contain the needle?
+  for (var i = 0; i < haystack.length; i++) {
+      if (haystack[i] === needle) return true;
+  }
 
-      return false;
-    }
+  return false;
+}
+```
 
 - if we have 100 items in the haystack but the first case is the needle, it would return in just one iteration.
 
@@ -149,23 +165,27 @@ ex.
 
 ex.
 
-    function sayHiNTimes(n) {
-        for (var i = 0; i < n; i++) {
-            console.log('hi');
-        }
+```javascript
+function sayHiNTimes(n) {
+    for (var i = 0; i < n; i++) {
+        console.log('hi');
     }
+}
+```
 
 - this func takes *O(1)* space because we don't allocate any new variables.
 
 another ex.
 
-    function arrayOfHiNTimes(n) {
-      var hiArray = [];
-      for (var i = 0; i < n; i++) {
-          hiArray[i] = 'hi';
-      }
-      return hiArray;
-    }
+```javascript
+function arrayOfHiNTimes(n) {
+  var hiArray = [];
+  for (var i = 0; i < n; i++) {
+      hiArray[i] = 'hi';
+  }
+  return hiArray;
+}
+```
 
 - this func takes *O(n)* space (the size of the new array scales with the size of the input).
 
@@ -173,15 +193,17 @@ another ex.
 
 **usually when talking about space complexity we are talking about additional space**, so we don't include space taken up by the input. For example, the below func takes *O(1)* space even though the input has *n* items.
 
-    function getLargestItem(arrayOfItems) {
-        var largest = -Number.MAX_VALUE;
-        arrayOfItems.forEach(function(item) {
-            if (item > largest) {
-                largest = item;
-            }
-        });
-        return largest;
-    }
+```javascript
+function getLargestItem(arrayOfItems) {
+    var largest = -Number.MAX_VALUE;
+    arrayOfItems.forEach(function(item) {
+        if (item > largest) {
+            largest = item;
+        }
+    });
+    return largest;
+}
+```
 
 ---
 
