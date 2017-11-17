@@ -1,4 +1,4 @@
-var solveHanoi = function(numDisks, fromPeg, toPeg) {
+var solveHanoi = (numDisks, fromPeg, toPeg) => {
     if(numDisks === 0) {
         return true;
     }

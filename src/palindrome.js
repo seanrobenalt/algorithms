@@ -1,20 +1,20 @@
 // Returns the first character of the string str
-var firstCharacter = function(str) {
+var firstCharacter = (str) => {
     return str.slice(0, 1);
 };
 
 // Returns the last character of a string str
-var lastCharacter = function(str) {
+var lastCharacter = (str) => {
     return str.slice(-1);
 };
 
 // Returns the string that results from removing the first
 //  and last characters from str
-var middleCharacters = function(str) {
+var middleCharacters = (str) => {
     return str.slice(1, -1);
 };
 
-var isPalindrome = function(str) {
+var isPalindrome = (str) => {
     // base case #1
     var len = str.length;
     if (len === 0 || len === 1) {
@@ -28,8 +28,8 @@ var isPalindrome = function(str) {
     return true;
 };
 
-var checkPalindrome = function(str) {
-    println("Is this word a palindrome? " + str);
+var checkPalindrome = (str) => {
+    println(`Is this word a palindrome? ${str}`);
     println(isPalindrome(str));
 };
 

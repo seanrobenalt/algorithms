@@ -1,4 +1,4 @@
-var insert = function(array, rightIndex, value) {
+var insert = (array, rightIndex, value) => {
     var i;
     for(i = rightIndex;i >= 0 && array[i] > value; i--) {
         array[i + 1] = array[i];

@@ -1,4 +1,4 @@
-var merge = function(array, p, q, r) {
+var merge = (array, p, q, r) => {
     var lowHalf = [];
     var highHalf = [];
 
@@ -45,7 +45,7 @@ println("Array after merging: " + array);
 Program.assertEqual(array, [2, 3, 6, 7, 9, 11, 12, 14]);
 
 // Takes in an array and recursively merge sorts it
-var mergeSort = function(array, p, r) {
+var mergeSort = (array, p, r) => {
     if (r > p) {
         var middle = Math.floor((p+r)/2);
         mergeSort(array, p, middle);

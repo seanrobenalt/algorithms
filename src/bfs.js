@@ -19,7 +19,7 @@ Queue.prototype.isEmpty = function() {
  * @returns {array} Array of objects describing each vertex, like
  *     [{distance: _, predecessor: _ }]
  */
-var doBFS = function(graph, source) {
+var doBFS = (graph, source) => {
     var bfsInfo = [];
 
     for (var i = 0; i < graph.length; i++) {

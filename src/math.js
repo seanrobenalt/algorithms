@@ -1,4 +1,4 @@
-Math.round = function(number) {
+Math.round = (number) => {
   var str = number.toString();
   var arr = str.split('.');
   if (str.includes('.')) {
@@ -15,7 +15,7 @@ Math.round = function(number) {
   return number;
 };
 
-Math.ceil = function(number) {
+Math.ceil = (number) => {
   var str = number.toString();
   var arr = str.split('.');
   if (str.includes('.')) {
@@ -26,7 +26,7 @@ Math.ceil = function(number) {
   return number;
 };
 
-Math.floor = function(number) {
+Math.floor = (number) => {
   var str = number.toString();
   var arr = str.split('.');
   if (str.includes('.')) {

@@ -1,13 +1,13 @@
-var isEven = function(n) {
+var isEven = (n) => {
     return n % 2 === 0;
 };
 
-var isOdd = function(n) {
+var isOdd = (n) => {
     return !isEven(n);
 };
 
-var power = function(x, n) {
-    println("Computing " + x + " raised to power " + n + ".");
+var power = (x, n) => {
+    println(`Computing ${x} raised to power ${n}.`);
     if (n === 0) {
         return 1;
     } else if (n < 0) {
@@ -20,8 +20,8 @@ var power = function(x, n) {
     }
 };
 
-var displayPower = function(x, n) {
-    println(x + " to the " + n + " is " + power(x, n));
+var displayPower = (x, n) => {
+    println(`${x} to the ${n} is ${power(x, n)}`);
 };
 
 displayPower(3, 0);

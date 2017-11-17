@@ -1,6 +1,6 @@
 var FIX_MARGIN_TOP = 20;
 
-var displayArray = function(array,startX,startY,canvasX,canvasY,stepHeight) {
+var displayArray = (array,startX,startY,canvasX,canvasY,stepHeight) => {
     textFont(createFont("monospace"), 12);
     fill(255, 0, 0);
     var cellMargin = 1;
@@ -10,7 +10,7 @@ var displayArray = function(array,startX,startY,canvasX,canvasY,stepHeight) {
     }
 };
 
-var drawLine = function(array,startX,startY,canvasX,canvasY,stepHeight,minIndex,index){
+var drawLine = (array,startX,startY,canvasX,canvasY,stepHeight,minIndex,index) => {
     var cellWidth = canvasX/array.length;
     var firstY = FIX_MARGIN_TOP + stepHeight * index;
     stepHeight = stepHeight * (index + 1);
@@ -18,13 +18,13 @@ var drawLine = function(array,startX,startY,canvasX,canvasY,stepHeight,minIndex,
       index*cellWidth,startY + FIX_MARGIN_TOP             + stepHeight);
 };
 
-var swap = function(array, firstIndex, secondIndex) {
+var swap = (array, firstIndex, secondIndex) => {
     var temp = array[firstIndex];
     array[firstIndex] = array[secondIndex];
     array[secondIndex] = temp;
 };
 
-var indexOfMinimum = function(array, startIndex) {
+var indexOfMinimum = (array, startIndex) => {
     var minValue = array[startIndex];
     var minIndex = startIndex;
     for(var i = minIndex + 1; i < array.length; i++) {
@@ -36,7 +36,7 @@ var indexOfMinimum = function(array, startIndex) {
     return minIndex;
 };
 
-var selectionSort = function(array,startX,startY,displayWidth,displayHeight) {
+var selectionSort = (array,startX,startY,displayWidth,displayHeight) => {
     var cellHeight = displayHeight / array.length;
     var rowGap = 24;
     displayArray(array,startX,startY,displayWidth,
