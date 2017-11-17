@@ -553,3 +553,9 @@ O(*n*) time and O(1) space.
 **Good strategy: Start with a brute force solution, look for repeat work in that solution, and modify it to only do that work once.**
 
 ---
+
+Given an array of integers, find the highest product you can get from three of the integers.
+
+![Solution](/src/highestProducts.js)
+
+O(*n*) time and O(1) space.
