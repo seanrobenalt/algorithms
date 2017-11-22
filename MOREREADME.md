@@ -269,3 +269,5 @@ Given an array of integers, find the highest product you can get from three of t
 O(*n*) time and O(1) space.
 
 ---
+
+Given an array of integers where the integers are in the range of 1..*n* and the array has a length of *n* + 1, find a duplicate integer in O(*n*) time while keeping our space cost at 0(1).
